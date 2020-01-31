@@ -152,6 +152,119 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-windows-搭建基于hexo的个人静态网站" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/31/windows-%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/">windows_搭建基于hexo的个人静态网站</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/31/windows-%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/" class="archive-article-date">
+  	<time datetime="2020-01-31T15:45:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-下载安装nodejs"><a href="#1-下载安装nodejs" class="headerlink" title="1. 下载安装nodejs"></a>1. 下载安装nodejs</h4><p>​    由于hexo要依赖于nodejs的包管理器npm来下载，所以第一步是安装nodejs，详细构成参考另一篇博文【nodejs安装及配置】</p>
+<h4 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h4><p>​    以管理员的身份进入cmd，输入命令 <code>cnpm install -g hexo-cli</code></p>
+<h4 id="3-建立目录存放hexo初始化后的文件"><a href="#3-建立目录存放hexo初始化后的文件" class="headerlink" title="3. 建立目录存放hexo初始化后的文件"></a>3. 建立目录存放hexo初始化后的文件</h4><p>​    这里以 在D盘下建立目录blog 来存放之后hexo的所有文件及目录 -&gt; 【D:\blog】为例</p>
+<p>​    <img src="https://s2.ax1x.com/2020/02/01/18txa9.png" alt=""></p>
+<h4 id="4-生成hexo本地博客"><a href="#4-生成hexo本地博客" class="headerlink" title="4. 生成hexo本地博客"></a>4. 生成hexo本地博客</h4><p>​    以管理员身份进入cmd，然后定位到 【D:\blog】目录下；</p>
+<p>​    输入命令 <code>hexo init</code> 初始化博客</p>
+<p>​    初始化之后，会在blog目录下生成博客的目录结构</p>
+<p>​    <img src="https://s2.ax1x.com/2020/02/01/18N4sO.png" alt=""></p>
+<p>​    这些都是Hexo为你自动生成的东西</p>
+<h4 id="5-启动hexo"><a href="#5-启动hexo" class="headerlink" title="5. 启动hexo"></a>5. 启动hexo</h4><p>​    以管理员身份进入cmd，然后定位到 【D:\blog】目录下；</p>
+<p>​    输入命令 <code>hexo s</code> 出现如图所示表示启动成功，此时在浏览器中输入地址 <a href="https://localhost:4000" target="_blank" rel="noopener">https://localhost:4000</a> 即可访问本地博客网站</p>
+<p><img src="https://s2.ax1x.com/2020/02/01/18Nvy8.png" alt=""></p>
+<h4 id="6-新建博客文章"><a href="#6-新建博客文章" class="headerlink" title="6. 新建博客文章"></a>6. 新建博客文章</h4><p>​    以管理员身份进入cmd，然后定位到 【D:\blog】目录下；</p>
+<p>​    输入命令 <code>hexo n &quot;文章名&quot;</code> 会在【D:\blog\source\_posts】目录下新建格式为md的博客文章，编辑博客文章保存即可</p>
+<h4 id="7-清理及构建"><a href="#7-清理及构建" class="headerlink" title="7. 清理及构建"></a>7. 清理及构建</h4><p>​    在创建了新的博客文章后，需要进行清理和重新构建</p>
+<p>​    清理命令：<code>hexo clean</code></p>
+<p>​    构建命令：<code>hexo g</code></p>
+<p>​    随后就可以再次启动hexo，新添加的博客文章就会同步到本地博客网站中</p>
+<h4 id="8-本地博客网站部署到github上公开使用"><a href="#8-本地博客网站部署到github上公开使用" class="headerlink" title="8. 本地博客网站部署到github上公开使用"></a>8. 本地博客网站部署到github上公开使用</h4><ul>
+<li><p>在github上创建一个新的空仓库，仓库名为 【github账户名.github.io】（固定写法）</p>
+<p><img src="https://s2.ax1x.com/2020/02/01/18Ux91.png" alt=""></p>
+</li>
+</ul>
+<ul>
+<li>安装git部署的插件，输入命令：<code>cnpm install --save hexo-deployer-git</code></li>
+</ul>
+<ul>
+<li>修改【_config.yml】配置文件，该文件的路径在【D:\blog】下，打开 【 _config.yml】文件，找到 【deploy】<ul>
+<li>type: git</li>
+<li>repo: <a href="https://github.com/ZhaoMeiEr/ZhaoMeiEr.github.io.git" target="_blank" rel="noopener">https://github.com/ZhaoMeiEr/ZhaoMeiEr.github.io.git</a>  (以自己仓库的名字为准)</li>
+<li>branch: master</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>将本地博客网站部署到远程github，输入命令：<code>hexo d</code> 即可 (若出现输入github账号密码的情况输入即可，若未出现就忽略)</li>
+</ul>
+<h4 id="9-访问公网博客网站"><a href="#9-访问公网博客网站" class="headerlink" title="9. 访问公网博客网站"></a>9. 访问公网博客网站</h4><p>​    将本地博客网站部署到github上后，就可以在公网上访问自己的博客网站了，网址为：https://【github账户名.github.io】,以我的为例子就是：<a href="https://zhaomeier.github.io" target="_blank" rel="noopener">https://zhaomeier.github.io</a></p>
+<h4 id="10-网站换肤"><a href="#10-网站换肤" class="headerlink" title="10. 网站换肤"></a>10. 网站换肤</h4><ul>
+<li><p>下载网站皮肤(前提是自己的电脑安装配置了git)</p>
+<p>在【D:\blog】目录下，输入命令：<code>git clone 皮肤地址 themes 皮肤名</code></p>
+<p>以【yilia】皮肤举例就是：<code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></p>
+<p>下载的皮肤在【D:\blog\themes\yilia】目录下，在hexo初始化时，默认下载了一个【landscape】皮肤</p>
+</li>
+</ul>
+<ul>
+<li>修改【_config.yml】 配置文件，找到【theme】，将【landscape】改为【yilia】，保存</li>
+</ul>
+<ul>
+<li>清理、构建、部署</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/31/windows-%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E7%BD%91%E7%AB%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-windows下nodejs安装及配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
