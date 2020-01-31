@@ -152,20 +152,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-windwos下nodejs安装及配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-windows下nodejs安装及配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/31/windwos%E4%B8%8Bnodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">windows下nodejs安装及配置</a>
+      <a class="article-title" href="/2020/01/31/windows%E4%B8%8Bnodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">nodejs安装及配置</a>
     </h1>
   
 
         
-        <a href="/2020/01/31/windwos%E4%B8%8Bnodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" class="archive-article-date">
-  	<time datetime="2020-01-31T09:21:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
+        <a href="/2020/01/31/windows%E4%B8%8Bnodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/" class="archive-article-date">
+  	<time datetime="2020-01-31T13:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
 </a>
         
       </header>
@@ -173,7 +173,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1. 下载"></a>1. 下载</h3><p>下载地址：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></p>
-<hr>
 <h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><ul>
 <li><p>nodejs下载完成之后 双击打开 开始nodejs安装 点击next</p>
 <p><img src="https://img-blog.csdnimg.cn/20190312150948217.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2Fsbm9ydGh3b3Jk,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
@@ -200,40 +199,49 @@
 </li>
 </ul>
 <p><strong><em>说明：</em></strong> <strong><em>新版的Nodejs已自带npm，安装Nodejs时会一起安装，npm的作用就是对Nodejs依赖的包进行管理，也可以理解为用来安装/卸载Nodejs需要装的东西</em></strong></p>
-<hr>
 <h3 id="3-测试是否安装成功"><a href="#3-测试是否安装成功" class="headerlink" title="3. 测试是否安装成功"></a>3. 测试是否安装成功</h3><ul>
 <li><p>安装成功之后进入cmd命令行，然后输入 <code>node -v</code> 测试是否安装成功，出现版本号就表示安装成功</p>
-<p><img src="https://img-blog.csdn.net/20170702181133567?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpeXVlaHVpbW91/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p> <img src="https://img-blog.csdnimg.cn/20190125132305864.png" alt="在这里插入图片描述"></p>
 </li>
 </ul>
 <ul>
 <li><p>测试npm是否安装成功，由于新版的nodejs已经集成了npm，所以之前安装nodejs的时候npm也连带安装好了。在命令行中输入 <code>npm -v</code> 来测试是否已经成功安装npm，出现版本号就表示成功安装了</p>
-<p><img src="https://img-blog.csdn.net/20170702181504869?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpeXVlaHVpbW91/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p> <img src="https://img-blog.csdnimg.cn/20190125132444563.png" alt="在这里插入图片描述"></p>
 </li>
 </ul>
-<hr>
 <h3 id="4-环境变量"><a href="#4-环境变量" class="headerlink" title="4. 环境变量"></a>4. 环境变量</h3><ul>
-<li><p>说明：这里的环境配置主要配置的是npm安装的全局模块所在的路径，以及缓存cache的路径，</p>
+<li><p><strong>说明：</strong>这里的环境配置主要配置的是npm安装的全局模块所在的路径，以及缓存cache的路径，</p>
 <p>之所以要配置，是因为以后在执行类似：<code>npm install -g</code> (后面的可选参数 -g，g代表global 全局安装的意思) 的安装语句时，会将安装的模块安装到【C:\User\用户名\AppData\Roaming\npm】路径中，占C盘空间。</p>
-<p>例如：我希望将全模块所在路径和缓存路径放在我nodejs安装的文件中，则在我安装的文件夹【D:\Develop\nodejs】下创建两个文件夹【node_global】和【node_cache】</p>
-<p> <img src="https://images2018.cnblogs.com/blog/1212358/201806/1212358-20180627174129730-1728082988.png" alt="img"></p>
+<p>例如：我希望将全模块所在路径和缓存路径放在我nodejs安装的文件中，则在我安装的文件夹【D:\MySoftware\nodejs】下创建两个文件夹【node_global】和【node_cache】</p>
+<p>​    <img src="https://img-blog.csdnimg.cn/20190125133525180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5na2FpZHN5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>创建完两个空文件夹之后，打开cmd命令窗口，输入</p>
 <p><code>npm config set prefix &quot;D:\Develop\nodejs\node_global&quot;</code></p>
 <p><code>npm config set cache &quot;D:\Develop\nodejs\node_cache&quot;</code></p>
-<p><img src="https://images2018.cnblogs.com/blog/1212358/201806/1212358-20180627174155924-729432114.png" alt="img"></p>
 </li>
 </ul>
 <ul>
-<li>修改环境变量 ：<strong>我的电脑</strong> - <strong>属性</strong> - <strong>高级系统设置</strong> - <strong>高级</strong> - <strong>环境变量</strong></li>
-</ul>
-<p><img src="https://images2018.cnblogs.com/blog/1212358/201806/1212358-20180627174211646-2129655843.png" alt="img"></p>
+<li><p><strong>设置环境变量</strong></p>
 <ul>
-<li>进入环境变量对话框，在 <strong>系统变量</strong> 下新建 <strong>NODE_PATH</strong> ,输入【D:\Develop\nodejs\node_global\node_modules】,将 <strong>用户变量</strong> 下的【path】修改为 【D:\Develop\nodejs\node_global】</li>
+<li><p>我的电脑-&gt;右键-&gt;属性-&gt;高级系统设置-&gt;高级-&gt;环境变量</p>
+<p><img src="https://img-blog.csdnimg.cn/20190125134508452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5na2FpZHN5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
 </ul>
-<p><img src="https://images2018.cnblogs.com/blog/1212358/201806/1212358-20180627174226230-50949781.png" alt="img"></p>
-<p><img src="https://images2018.cnblogs.com/blog/1212358/201806/1212358-20180627174233751-1796080030.png" alt="img"></p>
-<p><img src="https://images2018.cnblogs.com/blog/1212358/201806/1212358-20180627174241271-459236568.png" alt="img"></p>
-<p><img src="https://images2018.cnblogs.com/blog/1212358/201806/1212358-20180627174247318-1561517594.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li><p>新建NODE_PATH <strong>系统变量</strong></p>
+<p> <img src="https://img-blog.csdnimg.cn/20190125134706661.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5na2FpZHN5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p> <img src="https://img-blog.csdnimg.cn/20190125134828517.png" alt="在这里插入图片描述"></p>
+<p>其实看到这个变量值一开始有一些疑问，明明【node_global】是一个空文件夹，为什么还需要在后面定义一个【node_modules】文件夹？ 后续在使用npm安装软件时，会在【node_global】自动创建一个【node_modules】目录用来存放npm安装的软件</p>
+</li>
+</ul>
+<ul>
+<li><p>更改path <strong>用户变量</strong></p>
+<p> <img src="https://img-blog.csdnimg.cn/20190125135127816.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5na2FpZHN5,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>将其中默认的【C:\User\用户名\AppData\Roaming\npm】更改为下图：</p>
+<p> <img src="https://img-blog.csdnimg.cn/20190125135243733.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW5na2FpZHN5,size_16,color_FFFFFF,t_70" alt="D:\MySoftware\nodejs\node_global"></p>
+</li>
+</ul>
 <h3 id="5-切换npm镜像源"><a href="#5-切换npm镜像源" class="headerlink" title="5. 切换npm镜像源"></a>5. 切换npm镜像源</h3><p>​    安装后默认的镜像源是国外的，速度很慢，可以安装淘宝的 cnpm 镜像；之后利用 <code>cnpm</code> 代替 <code>npm</code></p>
 <p>​    <code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
 
@@ -248,145 +256,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/31/windwos%E4%B8%8Bnodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">我的第一篇博客文章</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-01-31T08:00:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一篇博客"><a href="#一篇博客" class="headerlink" title="一篇博客"></a>一篇博客</h2><p>在湘北明珠南州镇，老同学石喜红还算得上是个人物。精明强干、热情豪爽、好交好为。所以，南州镇里的各路豪杰，无论黑道白道，还是富商高官都敬他如座上宾。但是，石喜红为人低调，不深入了解，谁也不会把他和一个心思缜密、感情细腻的民营企业家联系起来。 　那年高考后，老石没能考上大学，他回到家乡河口，从底层的小商小贩做起，每天骑着单车，冒着酷暑严寒，穿行于田间地头收购苎麻、棉花，那些年，他吃够了前二十年没有吃过的苦，看遍了过去二十年没有看过的脸色。二00一年，老石终于实现了人生的第一个“小目标”，创办了南县恒顺祥纺织有限公司，凭着一股冲劲、闯劲，逐步建立起属于他自己的棉花加工“帝国”。 　那年，由于国家调整产业政策，老石的公司歇业了。随后，他因为催债受了处分，一次交通事故又让他受了重伤，渐渐的风言风语来了，落井下石的来了……就这样，一个妻子眼中的好丈夫，儿子心中的好父亲，我眼中的好同学，慢慢的脊粱驼了，鱼尾纹活跃了。一个玩派头、讲排场的农民精英，就再也没有兴趣提起自己创业时那些豪气冲天的旧事了，他用沉默来维护他的尊严，用隐忍来埋藏他的耻辱，用压抑来遗忘那不堪回首的往事。但是，无论生活多么艰难，无论命运多么坎坷，老石总是咬紧牙关，从没被挫折摧垮过。正是这样，老石才成了我心目中最真实最可以膜拜的英雄！ 　每次回老家，我的第一件事就是联系老石。当然，拜访老石只是我一个漂亮的借口，内心里还是想找他好吃好喝几天。每次见到老石，他的第一句话就是：“九满回来了，欢迎！欢迎！”接着，便开始张罗好吃好喝的，一次不落，我劝他不必如此破费，可他总是不听，还这样回应我：“九满，来到我的地盘，不呷好点哪行！”我听了心里自然高兴。餐桌上，在酒杯的碰撞声中，浓浓的同学情便随着碗筷碟杯的交响曲迅速蔓延，有时会莫名的被往事的某些片段带入稍稍的悲伤情调，甚至无法辨别是因为岁月艰难而落泪还是因为同学情谊而感动。 　今年六月，老石听说我回湖南，半夜三更还打电话给我，说要开车到长沙接我，而且破天荒地说了许多温情的话，害得我眼泪流了一大把。 　从学生时代开始，我与老石就相处的不错。所以，我离开故乡到广东工作三十多年了，处理老家的很多事情，我还会找老石咨询。生活中遇有愤懑或不如意，随时抓起电话向老石宣泄，他绝不厌烦，还送来热气腾腾的关心和鼓励，间或将一些激动、前瞻或奋斗的故事与我分享，让我感觉他身上的阳刚之气产生的能量正源源不断地流过我的身体，并渗透到我的生命中来，让我浑身上下充满了战胜困难的信心和力量，所有的烦恼和忧愁也随着声波的传递抛到九霄云外。 　去年八月，当老石得知我想收藏南洲大曲酒后，便立即把信息在他的朋友圈里扩散。那天中午，老石的电话来了：“九满，帮你弄到两支陈年南洲大曲，不过要十月份才能拿到货！”我好感动，好感动！那份震撼绝不亚于惊涛骇浪。 　今年六月，我回南县探亲，老石送我到岳阳高铁站，临别时，他从车里捧出两支南州大曲给我，看到这珍稀老酒，我的眼里喷射出惊喜的亮光，好象中了三十万大奖，看着我的神态，平日里不拘言笑的老石，象小孩似的手舞足蹈，高兴地笑了，而且笑得很灿烂。我能不感动吗！我喜欢这两支具有纪念意义的老酒，更喜欢隐藏在它背后的情感和故事…… 　那年秋天，桂长云从美国回乡探亲，原计划没有邀请老石参加欢迎活动。很快，老石的电话来了，生气地数落我：“九满，你真不够哥们，老桂回来也不联系我，要不是熊教授偷偷打电话给我，我还不知道呢！”我不好意思地嘟囔道“还不是怕给你添麻烦吗！”电话那头：“九总，你还是那个倔脾气，同学就是用来麻烦的，你不麻烦我，我才生气呢！”那一刻，千言万语噎在喉咙里，让我说不出话来。有这样的好同学，我还能说什么呢！后来，他把同学聚会张罗得有滋有味，营造出一种欢乐祥和的气氛，尽显他豪迈质朴、大气磅礴的个性。 　老石乐善好施、热心助人，但是，他十分珍惜那乱世荒年中积累下来的财富，他对自己俭朴到了近乎苛刻的程度。我认识他快四十年了，还没见他穿过一件像样的衣服，他用来代步的汽车，都快老掉牙了，我曾劝他换台新车，他竟说些蔽帚自珍的话来敷衍我，我知道，他是舍不得那台跟着他“南征北战”十多年的桑塔纳。但是，如果一听说哪个同学有困难，他就会竭尽全力帮助；无任哪个同学到南州镇，只要联系他，他都会好酒好菜招待…… 　所有这些，让老石成了我们同学活动的中流砥柱，也成了我心目中的偶像！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/31/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/31/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/01/31/hello-world/" class="archive-article-date">
-  	<time datetime="2020-01-31T07:51:17.200Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/31/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/01/31/windows%E4%B8%8Bnodejs%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE/">展开全文 >></a>
         </p>
       
 
